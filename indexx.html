@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Sekolah Smk Al-ihya</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f8f9fa; }
+        header { background: #2e8b57; color: white; text-align: center; padding: 20px; }
+        nav { background: #228b22; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; cursor: pointer; }
+        nav a:hover { text-decoration: underline; }
+        main { padding: 20px; min-height: 60vh; }
+        footer { background: #2e8b57; color: white; text-align: center; padding: 10px; }
+        img { border-radius: 10px; margin: 10px; }
+        form input, form textarea { width: 100%; max-width: 400px; padding: 8px; margin-top: 5px; }
+        form button { background: #2e8b57; color: white; border: none; padding: 8px 15px; cursor: pointer; }
+        form button:hover { background: #256b47; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SMK AL-IHYA SELAJAMBE</h1>
+    </header>
+
+    <nav>
+        <a onclick="tampilkan('beranda')">Beranda</a>
+        <a onclick="tampilkan('profil')">Profil</a>
+        <a onclick="tampilkan('galeri')">Kegiatan Sekolah</a>
+        <a onclick="tampilkan('kontak')">Jurusan</a>
+    </nav>
+
+    <main id="konten">
+        <!-- Konten default (beranda) akan tampil di sini -->
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SMK AL-IHYA SELAJAMBE.</p>
+    </footer>
+
+    <script>
+        // Konten setiap halaman disimpan dalam variabel JavaScript
+        const halaman = {
+            beranda: `
+                <h2>Selamat Datang di Website SMK AL-IHYA SELAJAMBE</h2>
+                <p>Kami berkomitmen memberikan pendidikan terbaik untuk membentuk generasi yang cerdas, kreatif, dan berakhlak mulia.</p>
+            `,
+            profil: `
+                <h2>Profil Sekolah</h2>
+                <p>SMK AL-IHYA SELAJAMBE adalah sekolah yang berkomitmen mencetak lulusan yang berprestasi.</p>
+                <h3>Visi</h3>
+                <p>Menjadi sekolah unggulan rujukan nasional.</p>
+                <h3>Misi</h3>
+                <ul>
+                    <li>Menumbuhkan budaya belajar,disiplin, dan karakter mulia melalui pendidikan berkualitas.</li>
+                    <li>Membangun lingkungan sekolah yang aman dan nyaman.</li>
+                </ul>
+            `,
+            galeri: `
+                <h2>Kegiatan Sekolah</h2>
+                <h2>Praktik Kerja Lapangan (PKL)</h2>
+				<h2>Uji Kom
+            `,
+            kontak: `
+                <h2>Jurusan</h2>
+                <p>TKJ (Teknik Komputer dan Jaringan</p>
+                <p>OTKP (Otomatisasi Tata Kelola Perkantoran</p>
+				<p>TKRO (Teknik Kendaraan Ringan Otomotif)</P>
+				<P>TBSM (Teknik Bisnis Sepeda Motor)</p>
+           
+            `
+        };
+
+        // Fungsi untuk menampilkan konten berdasarkan pilihan
+        function tampilkan(halamanNama) {
+            document.getElementById('konten').innerHTML = halaman[halamanNama];
+        }
+
+        // Tampilkan halaman beranda secara default saat pertama kali dibuka
+        tampilkan('beranda');
+    </script>
+</body>
+</html>
